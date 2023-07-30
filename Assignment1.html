@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 1</title>
+</head>
+<body>
+<script>
+
+    //.....Task 1.....//
+    document.write("<b>Task 1</b>  <br><br>")
+
+    function calculateDiscountedAmount(totalPurchaseAmount) {
+        let discountPercentage = 0;
+        let discountedAmount = 0;
+
+        if (totalPurchaseAmount >= 200) {
+            discountPercentage = 15;
+        } else if (totalPurchaseAmount >= 100) {
+            discountPercentage = 10;
+        } else if (totalPurchaseAmount >= 50) {
+            discountPercentage = 5;
+        }
+
+        discountedAmount = (totalPurchaseAmount * discountPercentage) / 100;
+        const finalAmount = totalPurchaseAmount - discountedAmount;
+
+        return {
+            discountedAmount: discountedAmount,
+            finalAmount: finalAmount
+        };
+    }
+
+    // Example usage:
+    const totalPurchaseAmount = 220; // You can change this value to test different scenarios
+    const {discountedAmount, finalAmount} = calculateDiscountedAmount(totalPurchaseAmount);
+
+    document.write("Total Purchase Amount: " + totalPurchaseAmount + "<br>");
+    document.write("Discounted Amount: " + discountedAmount + "<br>");
+    document.write("Total Amount + Discount Amount: " + finalAmount + "<br><br>");
+
+
+    //......Task 2.......//
+
+    document.write("<b>Task 2</b>  <br><br>")
+    function filterEvenNumbers(arr) {
+        return arr.filter(number => number % 2 === 0);
+    }
+
+    const originalArray = [12, 34, 45, 23, 6, 78, 54, 90];
+    const filteredEvenNumbers = filterEvenNumbers(originalArray);
+
+    document.write("Original Array: " + originalArray + "<br>");
+    document.write("Filtered Even Numbers: " + filteredEvenNumbers + "<br><br>");
+
+
+    //......Task 3.......//
+
+    document.write("<b>Task 3</b>  <br><br>")
+
+    function generateMultiplicationTable(number) {
+        document.write("Generate Multiplication Table for: " + number + "<br>");
+
+        for (let i = 1; i <= 10; i++) {
+            const result = i * number;
+            document.write(i + " x " + number + " = " + result + "<br><br>");
+        }
+    }
+
+    const givenNumber = 5;
+    generateMultiplicationTable(givenNumber);
+
+
+    //......Task 4.......//
+
+    document.write("<b>Task 4</b>  <br><br>")
+
+
+    function calculateGrade(score) {
+        let grade;
+
+        switch (true) {
+            case score >= 90:
+                grade = 'A';
+                break;
+            case score >= 80:
+                grade = 'B';
+                break;
+            case score >= 70:
+                grade = 'C';
+                break;
+            case score >= 60:
+                grade = 'D';
+                break;
+            default:
+                grade = 'F';
+                break;
+        }
+
+        return grade;
+    }
+
+    const studentScore = 82; // You can change this value to test different scores
+    const resultGrade = calculateGrade(studentScore);
+    document.write("Score: " + studentScore + ", Grade: " + resultGrade);
+
+
+</script>
+</body>
+</html>
